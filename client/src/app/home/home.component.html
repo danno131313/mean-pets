@@ -1,0 +1,34 @@
+<h2>Add Pet</h2>
+
+<form (submit) = "onSubmit()">
+    <input type="text" name="name" [(ngModel)] = "pet.name" placeholder="Pet Name"/>
+    <input type="text" name="age" [(ngModel)] = "pet.age" placeholder="Pet Age"/>
+    <input type="submit" value="Add Pet"/>
+</form>
+
+<h2>All Pets</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Likes
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tr *ngFor="let pet of pets">
+        <td>{{ pet.name }}</td>
+        <td>{{ pet.age }}</td>
+        <td>{{ pet.likes.length }}</td>
+        <td><button (click) = "newLike(pet._id)">Like!</button></td>
+    </tr>
+</table>

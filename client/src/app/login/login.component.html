@@ -1,0 +1,5 @@
+<h1>Login</h1>
+<form (submit) = "onSubmit()">
+    <label>Name: <input type="text" name="name" required minlength="2" [(ngModel)]="user.name" #name="ngModel"/></label>
+    <input type="submit" value="Submit" [disabled]="name.errors"/>
+</form>
